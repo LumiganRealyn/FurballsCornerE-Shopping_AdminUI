@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+     <!--CSS Linked-->
+    <link type="text/css" rel="stylesheet" href="css/adminstyle.css">
+    <link type="text/css" rel="stylesheet" href="css/all.min.css">
+
+
+    <title> Furballs Corner E-Shop - Admin</title>
+    
+    <!-- Page level plugin CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+   
+      <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Fontawesome for icons-->
+    <link href="css/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Sweet alert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    
+</head>
+
+<body>
+
+    <div class="sidebar-wrapper">
+    <!-----------Sidebar--------->
+        <section id=sidebar>
+          <section class="top-logo">
+            <a class="navbar-brands" href="#">
+              <img src="assets/fclogo.png" width="50" height="50">
+            </a> 
+            <h1>E-Shopping</h1> 
+        </section>
+        <section class="links-sidebar">
+            <div class="links">
+                <div class="icon">
+                <a href="dashboard.html"><i class="fas fa-fw fa-tachometer-alt"></i></a>
+                </div>
+                <a href="dashboard.html"><span>Dashboard</span></a>
+            </div>
+            <div class="links">
+                <div class="icon">
+                <a href="processorders.html"><i class="fas fa-people-carry"></i></a>
+                </div>
+                <a href="processorders.html"><span>Process Orders</span></a>
+            </div>
+            <div class="links">
+                <div class="icon">
+                    <a href="deliveredorders.html"><i class="fas fa-truck"></i></a>
+                </div>
+                <a href="deliveredorders.html"><span>Delivered Orders</span></a>
+            </div>
+            <div class="links">
+                <div class="icon">
+                    <a href="productmaster.html"><i class="fas fa-shopping-bag"></i></a>
+                </div>
+                <a href="productmaster.html"><span>Product Master</span></a>
+            </div>
+            <div class="links">
+                <div class="icon">
+                    <a href="categorymaster.html"><i class="fas fa-list-ul"></i></a>
+                </div>
+                <a href="categorymaster.html"><span>Category Master</span></a>
+              </div>
+              <div class="links">
+                <div class="icon">
+                    <a href="employeeaccount.html"><i class="fas fa-users"></i></a>
+                </div>
+                <a href="employeeaccount.html"><span>Employee Account</span></a>
+              </div>
+              <div class="links">
+                <div class="icon">
+                    <a href="customeraccount.html"><i class="fas fa-address-card"></i></a>
+                </div>
+                <a href="customeraccount.html"><span>Customer Account</span></a>
+              </div>
+            </section>
+        </section>
+
+        <!--Navbar Search-->
+        <nav class="navbars navbar-light bg-lights">
+          <button class="btns btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggles" href="#">
+            <i class="fas fa-bars"></i>
+          </button>
+          <form class="d-nones d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+            <div class="input-group">
+              <h5>Welcome Admin |</h5>
+            
+          
+          <ul class="navbar-nav ml-auto ml-md-0">
+            <li class="nav-item dropdown no-arrow">
+              <a class="navs-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle fa-fw"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#"><i class="fas fa-cogs"></i>  Settings</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"><i class="fas fa-sign-out-alt"></i> Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </form>
+          </nav>
+
+        <!-- Dashboard Main Content-->
+        <section id="main-content">
+
+            <div class="head-container">
+            <!-- Breadcrumbs-->
+                <ol class="content breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="#">Delivered Orders</a>
+                    </li>
+                    <li class="breadcrumb-item active">Overview</li>
+                </ol>
+            </div>
+        </section>
+        
+        <div class="cards">
+        <div class="cards-body">
+          <div class="table-responsive">
+            <div id="dataTable_wrappers" class="dataTables_wrapper dt-bootstrap4 no-footer">
+              <div class="rows">
+                <div class="cols-sm-12 cols-md-6">
+                  <div class="dataTables_length" id="dataTable_length">
+                    <label>
+                      Show 
+                      <select name="dataTable_length" aria-controls="dataTable" class="customs-select custom-select-sm form-control form-control-sm">
+                        <option value="10">
+                          10
+                        </option>
+                        <option value="25">
+                          25
+                        </option>
+                        <option value="50">
+                          50
+                        </option>
+                        <option value="100">
+                          100
+                        </option>
+                      </select> 
+                      entries
+                    </label>
+                  </div>
+                </div>
+                <div class="cols-sm-12 cols-md-6">
+                  <div id="dataTable_filter" class="dataTables_filter">
+                    <label>
+                      Search:
+                      <input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable">
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            <div class="row">
+              <div class="col-sm-12">
+                <table class="table table-bordered table-hover dataTable no-footer" id="dataTable" width="100%" cellspacing="0" al="" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+              <thead>
+                <tr align="center" class="tables-primary" role="row">
+                  <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Order ID: activate to sort column descending" style="width: 44px;">Order ID</th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 45px;">Name</th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending" style="width: 62px;">Address</th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Date: activate to sort column ascending" style="width: 37px;">Date</th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Delivery Emp: activate to sort column ascending" style="width: 63px;">Delivery Emp</th>
+                  <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 54px;">Status</th></tr>
+              </thead>
+              <tbody align="center">
+                
+                
+                
+                
+              <tr role="row" class="odd">
+                  <td class="sorting_1">OD0012</td>
+                  <td>Marvic Hey</td>
+                  <td>Southcom</td>
+                  <td>Jan 20, 2021</td>
+                  <td>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option selected>emp001</option>
+                    <option value="1">emp002</option>
+                    <option value="2">emp003</option>
+                    <option value="3">emp004</option>
+                  </select>
+                </td>
+                  <td>
+                    <span class="badge bg-success">Completed</span>
+                  </td>
+                </tr>
+                <tr role="row" class="even">
+                  <td class="sorting_1">OD0013</td>
+                  <td>Pedro Penduco</td>
+                  <td>Boalan</td>
+                  <td>Jan 21, 2021</td>
+                  <td>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option selected>emp001</option>
+                      <option value="1">emp002</option>
+                      <option value="2">emp003</option>
+                      <option value="3">emp004</option>
+                    </select>
+                  </td>
+                  <td>
+                    <span class="badge bg-success">Completed</span>
+                  </td>
+                </tr>
+                <tr role="row" class="odd">
+                  <td class="sorting_1">OD0017</td>
+                  <td>Maiya Hee</td>
+                  <td>Southcom</td>
+                  <td>Jan 22, 2021</td>
+                  <td>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option selected>emp001</option>
+                      <option value="1">emp002</option>
+                      <option value="2">emp003</option>
+                      <option value="3">emp004</option>
+                    </select>
+                  </td>
+                  <td>
+                    <span class="badge bg-success">Completed</span>
+                  </td>
+                </tr><tr role="row" class="even">
+                  <td class="sorting_1">OD0020</td>
+                  <td>Weab Rina</td>
+                  <td>Normal Rd. Baliwasan</td>
+                  <td>Jan 23, 2021</td>
+                  <td>
+                    <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                      <option selected>emp001</option>
+                      <option value="1">emp002</option>
+                      <option value="2">emp003</option>
+                      <option value="3">emp004</option>
+                    </select>
+                  </td>
+
+                  <td>
+                    <span class="badge bg-success">Completed</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 col-md-5">
+            <div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">
+              Showing 1 to 4 of 4 entries
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-7">
+            <div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate">
+              <ul class="pagination">
+                <li class="paginate_button page-item previous disabled" id="dataTable_previous">
+                  <a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a>
+                </li>
+                <li class="paginate_button page-item active">
+                  <a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                </li>
+                <li class="paginate_button page-item next disabled" id="dataTable_next">
+                  <a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  
+
+
+    <!-- Bootstrap core JavaScript-->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  
+  <!-- Core plugin JavaScript-->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Page level plugin JavaScript-->
+  <script src="vendor/chart.js/Chart.min.js"></script>
+  <script src="vendor/datatables/jquery.dataTables.js"></script>
+  <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="js/sb-admin.min.js"></script>
+    
+</body>
+</html>
